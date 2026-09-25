@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba de CDN - Utileria JS</title>
+</head>
+<body>
+    <h1>Prueba de Utileria JS desde CDN</h1>
+    <p>Abre la consola (F12) para ver los resultados.</p>
+
+    <script src="https://cdn.jsdelivr.net/gh/PerlaD391/CDN/utileria.js"></script>
+
+    <script>
+        console.log("=== PRUEBAS DE UTILERIA JS DESDE CDN ===");
+        
+        console.log("Correo válido:", Utileria.validarCorreo("juan@correo.com"));
+        console.log("Correo inválido:", Utileria.validarCorreo("juan@correo"));
+        
+        console.log("Solo letras:", Utileria.soloLetras("Juan Pérez"));
+        console.log("Con números:", Utileria.soloLetras("Juan123"));
+        
+        console.log("Longitud válida:", Utileria.validarLongitud("5512345678", 10));
+        console.log("Longitud inválida:", Utileria.validarLongitud("12345678901", 10));
+        
+        console.log("Edad:", Utileria.calcularEdad("2000-05-15"));
+        console.log("Mayor de edad:", Utileria.esMayorDeEdad("2000-05-15"));
+        
+        console.log("Password segura:", Utileria.validarPassword("Abc123!@"));
+        console.log("Password insegura:", Utileria.validarPassword("abc123"));
+        
+        console.log("Teléfono formateado:", Utileria.formatearTelefono("5512345678"));
+        console.log("IMC:", Utileria.calcularIMC(70, 1.75));
+
+        if (typeof Utileria !== 'undefined') {
+            document.body.innerHTML += '<h2 style="color: green;">¡Librería cargada correctamente desde el CDN!</h2>';
+        } else {
+            document.body.innerHTML += '<h2 style="color: red;">Error: la librería no se cargó</h2>';
+        }
+    </script>
+</body>
+</html>
